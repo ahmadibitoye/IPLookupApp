@@ -33,8 +33,9 @@
 
  try { 
  var r = new sn_ws.RESTMessageV2('x_1109013_iplookup.IPInfo', 'GetIPInfo');
+ r.setStringParameterNoEscape('ipaddress', current.ip_address);
  r.setStringParameterNoEscape('specified_field', 'geo');
- r.setStringParameterNoEscape('ip_address', current.ip_address);
+ 
 
  var response = r.execute();
  var responseBody = response.getBody();
@@ -44,6 +45,27 @@
 gs.info('status code is'+httpStatus );
  current.city = responseObj.city;
  gs.info("City = " + current.city);
+
+
+
+ current.timezone = responseObj.timezone;
+ gs.info("TimeZone = " + current.timezone);
+
+current.region = responseObj.region;
+ gs.info("Region = " + current.region);
+
+ current.country = responseObj.country;
+ gs.info("Country = " + current.country);
+
+ current.coordinate = responseObj.loc;
+ gs.info("Coordinate = " + current.coordinate);
+
+ current.internet_service = responseObj.org;
+ gs.info("Internet Service = " + current.internet_service);
+
+
+
+
  current.update();
  
  }
@@ -58,7 +80,7 @@ catch(err) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3863d11883092210f7246ed0deaad396</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>34</sys_mod_count>
         <sys_name>Populate IP Address City</sys_name>
         <sys_overrides/>
         <sys_package display_value="IPLookup" source="x_1109013_iplookup">01b4855483c52210f7246ed0deaad336</sys_package>
@@ -66,7 +88,7 @@ catch(err) {
         <sys_scope display_value="IPLookup">01b4855483c52210f7246ed0deaad336</sys_scope>
         <sys_update_name>sys_script_3863d11883092210f7246ed0deaad396</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-04-17 16:54:41</sys_updated_on>
+        <sys_updated_on>2025-04-17 20:14:45</sys_updated_on>
         <template/>
         <when>async_always</when>
     </sys_script>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="f2729d9483092210f7246ed0deaad34f" label="IPAddressInfo" max_length="40" name="x_1109013_iplookup_ipaddressinfo" type="collection">
-        <element label="IP address" max_length="40" name="ip_address" type="string"/>
+        <element label="IP address checker" max_length="40" name="ip_address" type="string"/>
+        <element label="Region" max_length="40" name="region" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Timezone" max_length="40" name="timezone" type="string"/>
         <element label="City" max_length="40" name="city" type="string"/>
+        <element label="Coordinate" max_length="40" name="coordinate" type="string"/>
+        <element label="Internet Service" max_length="40" name="internet_service" type="string"/>
+        <element label="Country" max_length="40" name="country" type="string"/>
     </element>
 </database>
